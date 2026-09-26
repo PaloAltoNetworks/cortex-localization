@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Cortex Localization",
+  "version": "0.3.0",
+  "description": "The extension that translates the Cortex UI based on your browser's language settings.",
+  "permissions": ["scripting", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cortex Localization"
+  },
+  "host_permissions": [
+    "https://*.xdr.us.paloaltonetworks.com/*",
+    "https://*.xdr.eu.paloaltonetworks.com/*",
+
+    "https://*.xdr.br.paloaltonetworks.com/*",
+    "https://*.xdr.ca.paloaltonetworks.com/*",
+    "https://*.xdr.fi.paloaltonetworks.com/*",
+    "https://*.xdr.fr.paloaltonetworks.com/*",
+    "https://*.xdr.fa.paloaltonetworks.com/*",
+    "https://*.xdr.de.paloaltonetworks.com/*",
+    "https://*.xdr.il.paloaltonetworks.com/*",
+    "https://*.xdr.it.paloaltonetworks.com/*",
+    "https://*.xdr.nl.paloaltonetworks.com/*",
+    "https://*.xdr.pl.paloaltonetworks.com/*",
+    "https://*.xdr.qa.paloaltonetworks.com/*",
+    "https://*.xdr.qt.paloaltonetworks.com/*",
+    "https://*.xdr.sa.paloaltonetworks.com/*",
+    "https://*.xdr.za.paloaltonetworks.com/*",
+    "https://*.xdr.es.paloaltonetworks.com/*",
+    "https://*.xdr.ch.paloaltonetworks.com/*",
+    "https://*.xdr.uk.paloaltonetworks.com/*",
+
+    "https://*.xdr.au.paloaltonetworks.com/*",
+    "https://*.xdr.dl.paloaltonetworks.com/*",
+    "https://*.xdr.in.paloaltonetworks.com/*",
+    "https://*.xdr.id.paloaltonetworks.com/*",
+    "https://*.xdr.jp.paloaltonetworks.com/*",
+    "https://*.xdr.sg.paloaltonetworks.com/*",
+    "https://*.xdr.kr.paloaltonetworks.com/*",
+    "https://*.xdr.tw.paloaltonetworks.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

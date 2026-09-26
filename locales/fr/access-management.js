@@ -1,0 +1,218 @@
+/**
+ * © 2026 Palo Alto Networks, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+const dictionaryAccessManagement = {
+  exact: {
+    "Direct Role": "Rôle direct",
+    "Download example file": "Télécharger un fichier d'exemple",
+    "Email": "E-mail",
+    "Import": "Importer",
+    "Import Multiple User Roles": "Importer plusieurs rôles utilisateur",
+    "Show Hidden Users": "Afficher les utilisateurs masqués",
+    "Hide Hidden Users": "Masquer les utilisateurs masqués",
+    "This list shows users with a Cortex User role in Customer Support Portal":
+      "Cette liste affiche les utilisateurs disposant d'un rôle d'utilisateur Cortex dans le Customer Support Portal",
+    "User Name": "Nom d'utilisateur",
+    "User Type": "Type d'utilisateur",
+    "Group Roles": "Rôles de groupe",
+    "Last Login Time": "Date de dernière connexion",
+    "First Name": "Prénom",
+    "New Role": "Nouveau rôle",
+    "Role Name": "Nom du rôle",
+    "Define name here": "Saisissez le nom ici",
+    "Add role description": "Ajouter une description du rôle",
+    "Enable dataset access management": "Activer la gestion des accès aux jeux de données",
+    "New Group": "Nouveau groupe",
+    "Import AD Group": "Importer un groupe AD",
+    "To Import AD groups, enable the Cloud Identity Engine in the Configurations> Integrations> Cloud Identity Engine page":
+      "Pour importer des groupes AD, activez Cloud Identity Engine dans la page Configurations > Intégrations > Cloud Identity Engine",
+    "Role": "Rôle",
+    "Nested Groups": "Groupes imbriqués",
+    "IdP Groups": "Groupes IdP",
+    "Insert Time": "Heure d'insertion",
+    "Update Time": "Heure de mise à jour",
+    "New User Group": "Nouveau groupe d'utilisateurs",
+    "Use the Scope tab to ensure that required access scope is granted":
+      "Utilisez l'onglet Portée pour vous assurer que la portée d'accès requise est accordée",
+    "Enter nested group(s)": "Saisissez le ou les groupes imbriqués",
+    "Enter user(s)": "Saisissez le ou les utilisateurs",
+    "All cases and issues": "Tous les cas et problèmes",
+    "No cases and issues": "Aucun cas ni problème",
+    "Select asset groups": "Sélectionner des groupes d'actifs",
+    "Select the specific asset groups to which this user group will have access.":
+      "Sélectionnez les groupes d'actifs spécifiques auxquels ce groupe d'utilisateurs aura accès.",
+    "Select domains": "Sélectionner des domaines",
+    "Select specific (at least one required)": "Sélection spécifique (au moins un requis)",
+    "Enter description...": "Saisissez une description...",
+    "saml group mapping": "mappage de groupes saml",
+    "Add IdP groups": "Ajouter des groupes IdP",
+    "Provide access to assets listed under Inventory → All Assets, and to view their related Cases, Issues, and Findings. Only Asset Groups relevant for scoping are available for selection. Note that the visibility of Security domain Issues that refers to assets with agents is controlled by the Endpoint scoping configuration.":
+      "Donnez accès aux actifs répertoriés sous Inventaire → Tous les actifs, ainsi qu'à l'affichage des cas, problèmes et constats associés. Seuls les groupes d'actifs pertinents pour la définition de la portée peuvent être sélectionnés. Notez que la visibilité des problèmes du domaine Security qui font référence à des actifs dotés d'agents est contrôlée par la configuration de la portée des endpoints.",
+    "Provide access to Endpoint Groups and Endpoint Tags to view their related Agent management and Enterprise policies. Note that the configuration may impact the visibility of related Security domain Cases and Issues, but will not affect asset visibility.":
+      "Donnez accès aux groupes d'endpoints et aux tags d'endpoints pour afficher la gestion des agents et les politiques Enterprise associées. Notez que cette configuration peut affecter la visibilité des cas et problèmes du domaine Security associés, mais n'affecte pas la visibilité des actifs.",
+    "Allow access to cases and issues that are not referencing known assets or endpoints.":
+      "Autoriser l'accès aux cas et problèmes qui ne font pas référence à des actifs ou endpoints connus.",
+    "No tags and groups": "Aucun tag ni groupe",
+    "All groups, All tags": "Tous les groupes, tous les tags",
+    "All tags": "Tous les tags",
+    "All groups": "Tous les groupes",
+    "No groups": "Aucun groupe",
+    "No tags": "Aucun tag",
+    "Endpoint Groups": "Groupes d'endpoints",
+    "Endpoint Tags": "Tags d'endpoints",
+    "Select specific": "Sélection spécifique",
+    "Select endpoint groups": "Sélectionner des groupes d'endpoints",
+    "Select endpoint tags": "Sélectionner des tags d'endpoints",
+    "Collapse all": "Tout réduire",
+    "Configure who can grant additional access by sharing individual instances of dashboards and saved queries with other users. Account Administrators and Instance Administrators can always share.":
+      "Configurez qui peut accorder un accès supplémentaire en partageant des instances individuelles de tableaux de bord et de requêtes enregistrées avec d'autres utilisateurs. Les administrateurs de compte et les administrateurs d'instance peuvent toujours partager.",
+    "Editors can also Share objects with others": "Les éditeurs peuvent également partager des objets avec d'autres utilisateurs",
+    "Granular Access Settings": "Paramètres d'accès granulaires",
+    "Owners and editors can change the general access": "Les propriétaires et les éditeurs peuvent modifier l'accès général",
+    "Owners can Share objects they created": "Les propriétaires peuvent partager les objets qu'ils ont créés",
+    "Add SSO Connection": "Ajouter une connexion SSO",
+    "Communication Task Authentication": "Authentification des tâches de communication",
+    "Configure internal Cortex tenant user login authentication using your organization's identity provider (IdP).":
+      "Configurez l'authentification de connexion des utilisateurs internes du tenant Cortex à l'aide du fournisseur d'identité (IdP) de votre organisation.",
+    "Login Options": "Options de connexion",
+    "SSO Enabled": "SSO activé",
+    "SSO Integration": "Intégration SSO",
+    "Click here": "Cliquez ici",
+    "to review SSO authentication errors": "pour consulter les erreurs d'authentification SSO",
+    "Advanced Settings": "Paramètres avancés",
+    "Relay State": "Relay State",
+    "SP Logout URL": "URL de déconnexion du SP",
+    "Service Provider Public Certificate": "Certificat public du fournisseur de services",
+    "Service Provider Private Key (Pem Format)": "Clé privée du fournisseur de services (format Pem)",
+    "Remove SAML RequestedAuthnContext": "Supprimer SAML RequestedAuthnContext",
+    "Force Authentication": "Forcer l'authentification",
+    "Single Sign-On URL": "URL d'authentification unique",
+    "Audience URI (SP Entity ID)": "URI d'audience (ID d'entité du SP)",
+    "Metadata URL": "URL des métadonnées",
+    "Default Role": "Rôle par défaut",
+    "IdP Attributes Mapping": "Mappage des attributs IdP",
+    "Group Membership": "Appartenance aux groupes",
+    "Last Name": "Nom de famille",
+    "Configure external (non-Cortex) user authentication to answer a survey sent via a communication task.":
+      "Configurez l'authentification des utilisateurs externes (hors Cortex) pour répondre à une enquête envoyée via une tâche de communication.",
+    "Enable Communication task SSO Connection": "Activer la connexion SSO des tâches de communication",
+    "IdP Issuer ID": "ID de l'émetteur IdP",
+    "IdP SSO URL": "IdP SSO URL",
+    "IdP Single Logout URL": "URL de déconnexion unique de l'IdP",
+    "x.509 certificate": "certificat x.509",
+    "The metadata provides information about the IdP's capabilities, endpoints, keys, and more.":
+      "Les métadonnées fournissent des informations sur les fonctionnalités, les endpoints, les clés, etc. de l'IdP.",
+    "Metadata URL examples:": "Exemples d'URL de métadonnées :",
+    "Associate this IdP with a specific domain (i.e. domain.com).":
+      "Associez cet IdP à un domaine spécifique (par ex. domain.com).",
+    "When logging in, users are redirected to the IdP associated with their email domain or to the default IdP if no association exists.":
+      "Lors de la connexion, les utilisateurs sont redirigés vers l'IdP associé à leur domaine de messagerie, ou vers l'IdP par défaut si aucune association n'existe.",
+    "The name of the field/attribute that is used to store the user's last name in your Identity Provider":
+      "Nom du champ/attribut utilisé pour stocker le nom de famille de l'utilisateur dans votre fournisseur d'identité",
+    "The name of the field/attribute that is used to store the user's first name in your Identity Provider":
+      "Nom du champ/attribut utilisé pour stocker le prénom de l'utilisateur dans votre fournisseur d'identité",
+    "The name of the field/attribute that is used to store the user's email address in your Identity Provider":
+      "Nom du champ/attribut utilisé pour stocker l'adresse e-mail de l'utilisateur dans votre fournisseur d'identité",
+    "Prompts users to reauthenticate log in, if requested by the Idp.":
+      "Invite les utilisateurs à s'authentifier de nouveau lors de la connexion, si l'IdP le demande.",
+    "Allows users to log in by using additional authentication methods.":
+      "Permet aux utilisateurs de se connecter à l'aide de méthodes d'authentification supplémentaires.",
+    "Key pair for SAML request signing (mostly required for ADFS)": "Paire de clés pour la signature des requêtes SAML (principalement requise pour ADFS)",
+    "The URL of the landing page used after SSO login to the Cortex console.":
+      "URL de la page d'accueil utilisée après la connexion SSO à la console Cortex.",
+    "In most cases, this field should be left blank": "Dans la plupart des cas, ce champ doit rester vide",
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+
+    // --- Manage permissions screen (permission category list) ---
+    "3rd Party Tools": "Outils tiers",
+    "Agent Administrations": "Administration des agents",
+    "Agent Extension Policies": "Politiques d'extension des agents",
+    "Agent Groups": "Groupes d'agents",
+    "Agent Installations": "Installations d'agents",
+    "Agent Prevention Policies": "Politiques de prévention des agents",
+    "Agent Profiles": "Profils d'agents",
+    "Agent Scripts Library": "Bibliothèque de scripts d'agents",
+    "Alert Notifications": "Notifications d'alertes",
+    "AppSec Collector": "Collecteur AppSec",
+    "AppSec Rules": "Règles AppSec",
+    "Asset Roles Configuration": "Configuration des rôles d'actifs",
+    "Auditing": "Audit",
+    "Automations": "Automatisations",
+    "Broker Service": "Service Broker",
+    "CI CD Scans": "Analyses CI/CD",
+    "CLI Tool": "Outil CLI",
+    "Case Properties": "Propriétés des cas",
+    "Cases and Issues": "Cas et problèmes",
+    "Catalog and Assessment Profiles": "Catalogue et profils d'évaluation",
+    "Cloud Consumption Command Center": "Centre de commande de la consommation cloud",
+    "Cloud Security Command Center": "Centre de commande de la sécurité cloud",
+    "Command Center Dashboards": "Tableaux de bord du centre de commande",
+    "Compute Policies": "Politiques de calcul",
+    "Conditional Access Policy": "Politique d'accès conditionnel",
+    "Cortex Agentic Assistant": "Assistant agentique Cortex",
+    "Cortex XDR - analytics": "Cortex XDR - analyses",
+    "Create Role": "Créer un rôle",
+    "Data-in-motion Rules": "Règles des données en mouvement",
+    "Datasets (Disabled)": "Jeux de données (désactivés)",
+    "Detections": "Détections",
+    "Device Control": "Contrôle des périphériques",
+    "Endpoint Applications": "Applications des endpoints",
+    "Endpoint Applications Groups": "Groupes d'applications des endpoints",
+    "Endpoint DLP Settings": "Paramètres DLP des endpoints",
+    "Exception Approver Admin": "Administrateur approbateur des exceptions",
+    "Exception Management Admin": "Administrateur de la gestion des exceptions",
+    "Exclusion List": "Liste d'exclusion",
+    "Fields and Types": "Champs et types",
+    "General Configuration": "Configuration générale",
+    "General Setting": "Paramètre général",
+    "Generic Collector": "Collecteur générique",
+    "Global Exceptions": "Exceptions globales",
+    "Identity Security Runtime": "Runtime de sécurité des identités",
+    "Ingestion Monitoring": "Surveillance de l'ingestion",
+    "Integrations Permissions": "Autorisations des intégrations",
+    "Issue Exclusions": "Exclusions de problèmes",
+    "Jobs": "Tâches",
+    "Layouts": "Mises en page",
+    "Log Collections": "Collectes de journaux",
+    "Long Running HTTP Integrations configuration": "Configuration des intégrations HTTP de longue durée",
+    "Macro Library": "Bibliothèque de macros",
+    "On-demand Analytics": "Analyses à la demande",
+    "PR Scans": "Analyses de PR",
+    "Periodic": "Périodique",
+    "Public API": "API publique",
+    "Query Library": "Bibliothèque de requêtes",
+    "Scans": "Analyses",
+    "Supply Chain Catalog": "Catalogue de la chaîne d'approvisionnement",
+    "Supply Chain Tools": "Outils de la chaîne d'approvisionnement",
+    "Support": "Support",
+    "Sync Profile": "Profil de synchronisation",
+    "Trusted Entities": "Entités de confiance",
+    "View/Edit": "Afficher/Modifier",
+  },
+
+  patterns: [
+    { re: /^(\d+)\s+Asset groups$/, tpl: "$1 groupes d'actifs" },
+    { re: /^(\d+)\s+Domains$/, tpl: "$1 domaines" },
+    { re: /^(\d+)\s+Groups?\s*,\s*(\d+)\s+Tags?$/, tpl: "$1 groupe(s), $2 tag(s)" },
+    { re: /^(\d+)\s+Groups?$/, tpl: "$1 groupe(s)" },
+    { re: /^(\d+)\s+Tags?$/, tpl: "$1 tag(s)" },
+    { re: /^All groups\s*,\s*(\d+)\s+Tags?$/, tpl: "Tous les groupes, $1 tag(s)" },
+    { re: /^(\d+)\s+Groups?\s*,\s*All tags$/, tpl: "$1 groupe(s), tous les tags" },
+  ],
+
+  skip: [],
+};

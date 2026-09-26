@@ -1,0 +1,218 @@
+/**
+ * © 2026 Palo Alto Networks, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+const dictionaryAccessManagement = {
+  exact: {
+    "Direct Role": "직접 역할",
+    "Download example file": "예제 파일 다운로드",
+    "Email": "이메일",
+    "Import": "가져오기",
+    "Import Multiple User Roles": "여러 사용자 역할 가져오기",
+    "Show Hidden Users": "숨겨진 사용자 표시",
+    "Hide Hidden Users": "숨겨진 사용자 숨기기",
+    "This list shows users with a Cortex User role in Customer Support Portal":
+      "이 목록에는 Customer Support Portal에서 Cortex 사용자 역할이 있는 사용자가 표시됩니다",
+    "User Name": "사용자 이름",
+    "User Type": "사용자 유형",
+    "Group Roles": "그룹 역할",
+    "Last Login Time": "마지막 로그인 시간",
+    "First Name": "이름",
+    "New Role": "새 역할",
+    "Role Name": "역할 이름",
+    "Define name here": "여기에 이름 정의",
+    "Add role description": "역할 설명 추가",
+    "Enable dataset access management": "데이터 세트 액세스 관리 사용",
+    "New Group": "새 그룹",
+    "Import AD Group": "AD 그룹 가져오기",
+    "To Import AD groups, enable the Cloud Identity Engine in the Configurations> Integrations> Cloud Identity Engine page":
+      "AD 그룹을 가져오려면 구성 > 통합 > Cloud Identity Engine 페이지에서 Cloud Identity Engine을 사용 설정하세요",
+    "Role": "역할",
+    "Nested Groups": "중첩 그룹",
+    "IdP Groups": "IdP 그룹",
+    "Insert Time": "삽입 시간",
+    "Update Time": "업데이트 시간",
+    "New User Group": "새 사용자 그룹",
+    "Use the Scope tab to ensure that required access scope is granted":
+      "\"범위\" 탭을 사용하여 필요한 액세스 범위가 부여되었는지 확인하세요",
+    "Enter nested group(s)": "중첩 그룹 입력",
+    "Enter user(s)": "사용자 입력",
+    "All cases and issues": "모든 케이스 및 이슈",
+    "No cases and issues": "케이스 및 이슈 없음",
+    "Select asset groups": "자산 그룹 선택",
+    "Select the specific asset groups to which this user group will have access.":
+      "이 사용자 그룹이 액세스할 수 있는 특정 자산 그룹을 선택하세요.",
+    "Select domains": "도메인 선택",
+    "Select specific (at least one required)": "특정 항목 선택(하나 이상 필수)",
+    "Enter description...": "설명 입력...",
+    "saml group mapping": "SAML 그룹 매핑",
+    "Add IdP groups": "IdP 그룹 추가",
+    "Provide access to assets listed under Inventory → All Assets, and to view their related Cases, Issues, and Findings. Only Asset Groups relevant for scoping are available for selection. Note that the visibility of Security domain Issues that refers to assets with agents is controlled by the Endpoint scoping configuration.":
+      "인벤토리 → 모든 자산에 나열된 자산에 대한 액세스 권한을 제공하고 관련 케이스, 이슈 및 결과를 볼 수 있도록 합니다. 범위 지정과 관련된 자산 그룹만 선택할 수 있습니다. 에이전트가 있는 자산을 참조하는 Security 도메인 이슈의 표시 여부는 엔드포인트 범위 구성에 의해 제어됩니다.",
+    "Provide access to Endpoint Groups and Endpoint Tags to view their related Agent management and Enterprise policies. Note that the configuration may impact the visibility of related Security domain Cases and Issues, but will not affect asset visibility.":
+      "엔드포인트 그룹 및 엔드포인트 태그에 대한 액세스 권한을 제공하여 관련 에이전트 관리 및 Enterprise 정책을 볼 수 있도록 합니다. 이 구성은 관련 Security 도메인 케이스 및 이슈의 표시 여부에 영향을 줄 수 있지만 자산 표시 여부에는 영향을 주지 않습니다.",
+    "Allow access to cases and issues that are not referencing known assets or endpoints.":
+      "알려진 자산 또는 엔드포인트를 참조하지 않는 케이스 및 이슈에 대한 액세스를 허용합니다.",
+    "No tags and groups": "태그 및 그룹 없음",
+    "All groups, All tags": "모든 그룹, 모든 태그",
+    "All tags": "모든 태그",
+    "All groups": "모든 그룹",
+    "No groups": "그룹 없음",
+    "No tags": "태그 없음",
+    "Endpoint Groups": "엔드포인트 그룹",
+    "Endpoint Tags": "엔드포인트 태그",
+    "Select specific": "특정 항목 선택",
+    "Select endpoint groups": "엔드포인트 그룹 선택",
+    "Select endpoint tags": "엔드포인트 태그 선택",
+    "Collapse all": "모두 축소",
+    "Configure who can grant additional access by sharing individual instances of dashboards and saved queries with other users. Account Administrators and Instance Administrators can always share.":
+      "대시보드 및 저장된 쿼리의 개별 인스턴스를 다른 사용자와 공유하여 추가 액세스 권한을 부여할 수 있는 사용자를 구성합니다. 계정 관리자와 인스턴스 관리자는 항상 공유할 수 있습니다.",
+    "Editors can also Share objects with others": "편집자도 다른 사용자와 개체를 공유할 수 있음",
+    "Granular Access Settings": "세분화된 액세스 설정",
+    "Owners and editors can change the general access": "소유자와 편집자가 일반 액세스를 변경할 수 있음",
+    "Owners can Share objects they created": "소유자가 자신이 만든 개체를 공유할 수 있음",
+    "Add SSO Connection": "SSO 연결 추가",
+    "Communication Task Authentication": "커뮤니케이션 작업 인증",
+    "Configure internal Cortex tenant user login authentication using your organization's identity provider (IdP).":
+      "조직의 ID 공급자(IdP)를 사용하여 내부 Cortex 테넌트 사용자 로그인 인증을 구성합니다.",
+    "Login Options": "로그인 옵션",
+    "SSO Enabled": "SSO 사용",
+    "SSO Integration": "SSO 통합",
+    "Click here": "여기를 클릭",
+    "to review SSO authentication errors": "하여 SSO 인증 오류 검토",
+    "Advanced Settings": "고급 설정",
+    "Relay State": "릴레이 상태",
+    "SP Logout URL": "SP 로그아웃 URL",
+    "Service Provider Public Certificate": "서비스 공급자 공개 인증서",
+    "Service Provider Private Key (Pem Format)": "서비스 공급자 개인 키(Pem 형식)",
+    "Remove SAML RequestedAuthnContext": "SAML RequestedAuthnContext 제거",
+    "Force Authentication": "강제 인증",
+    "Single Sign-On URL": "Single Sign-On URL",
+    "Audience URI (SP Entity ID)": "대상 URI(SP 엔터티 ID)",
+    "Metadata URL": "메타데이터 URL",
+    "Default Role": "기본 역할",
+    "IdP Attributes Mapping": "IdP 속성 매핑",
+    "Group Membership": "그룹 멤버십",
+    "Last Name": "성",
+    "Configure external (non-Cortex) user authentication to answer a survey sent via a communication task.":
+      "커뮤니케이션 작업을 통해 전송된 설문에 응답하기 위한 외부(Cortex 외) 사용자 인증을 구성합니다.",
+    "Enable Communication task SSO Connection": "커뮤니케이션 작업 SSO 연결 사용",
+    "IdP Issuer ID": "IdP 발급자 ID",
+    "IdP SSO URL": "IdP SSO URL",
+    "IdP Single Logout URL": "IdP 단일 로그아웃 URL",
+    "x.509 certificate": "x.509 인증서",
+    "The metadata provides information about the IdP's capabilities, endpoints, keys, and more.":
+      "메타데이터는 IdP의 기능, 엔드포인트, 키 등에 대한 정보를 제공합니다.",
+    "Metadata URL examples:": "메타데이터 URL 예:",
+    "Associate this IdP with a specific domain (i.e. domain.com).":
+      "이 IdP를 특정 도메인(예: domain.com)과 연결합니다.",
+    "When logging in, users are redirected to the IdP associated with their email domain or to the default IdP if no association exists.":
+      "로그인 시 사용자는 이메일 도메인과 연결된 IdP로 리디렉션되며, 연결된 IdP가 없으면 기본 IdP로 리디렉션됩니다.",
+    "The name of the field/attribute that is used to store the user's last name in your Identity Provider":
+      "ID 공급자에서 사용자의 성을 저장하는 데 사용되는 필드/속성의 이름",
+    "The name of the field/attribute that is used to store the user's first name in your Identity Provider":
+      "ID 공급자에서 사용자의 이름을 저장하는 데 사용되는 필드/속성의 이름",
+    "The name of the field/attribute that is used to store the user's email address in your Identity Provider":
+      "ID 공급자에서 사용자의 이메일 주소를 저장하는 데 사용되는 필드/속성의 이름",
+    "Prompts users to reauthenticate log in, if requested by the Idp.":
+      "IdP에서 요청하는 경우 사용자에게 로그인 재인증을 요구합니다.",
+    "Allows users to log in by using additional authentication methods.":
+      "사용자가 추가 인증 방법을 사용하여 로그인할 수 있도록 합니다.",
+    "Key pair for SAML request signing (mostly required for ADFS)": "SAML 요청 서명용 키 쌍(주로 ADFS에 필요)",
+    "The URL of the landing page used after SSO login to the Cortex console.":
+      "Cortex 콘솔에 SSO로 로그인한 후 사용되는 랜딩 페이지의 URL입니다.",
+    "In most cases, this field should be left blank": "대부분의 경우 이 필드는 비워 두어야 합니다",
+    "firstName": "이름",
+    "lastName": "성",
+
+    // --- Manage permissions screen (permission category list) ---
+    "3rd Party Tools": "타사 도구",
+    "Agent Administrations": "에이전트 관리",
+    "Agent Extension Policies": "에이전트 확장 정책",
+    "Agent Groups": "에이전트 그룹",
+    "Agent Installations": "에이전트 설치",
+    "Agent Prevention Policies": "에이전트 방지 정책",
+    "Agent Profiles": "에이전트 프로필",
+    "Agent Scripts Library": "에이전트 스크립트 라이브러리",
+    "Alert Notifications": "경고 알림",
+    "AppSec Collector": "AppSec 수집기",
+    "AppSec Rules": "AppSec 규칙",
+    "Asset Roles Configuration": "자산 역할 구성",
+    "Auditing": "감사",
+    "Automations": "자동화",
+    "Broker Service": "브로커 서비스",
+    "CI CD Scans": "CI/CD 스캔",
+    "CLI Tool": "CLI 도구",
+    "Case Properties": "케이스 속성",
+    "Cases and Issues": "케이스 및 이슈",
+    "Catalog and Assessment Profiles": "카탈로그 및 평가 프로필",
+    "Cloud Consumption Command Center": "클라우드 사용량 커맨드 센터",
+    "Cloud Security Command Center": "클라우드 보안 커맨드 센터",
+    "Command Center Dashboards": "커맨드 센터 대시보드",
+    "Compute Policies": "컴퓨팅 정책",
+    "Conditional Access Policy": "조건부 액세스 정책",
+    "Cortex Agentic Assistant": "Cortex 에이전틱 어시스턴트",
+    "Cortex XDR - analytics": "Cortex XDR - 분석",
+    "Create Role": "역할 생성",
+    "Data-in-motion Rules": "전송 중 데이터 규칙",
+    "Datasets (Disabled)": "데이터 세트(사용 안 함)",
+    "Detections": "탐지",
+    "Device Control": "장치 제어",
+    "Endpoint Applications": "엔드포인트 애플리케이션",
+    "Endpoint Applications Groups": "엔드포인트 애플리케이션 그룹",
+    "Endpoint DLP Settings": "엔드포인트 DLP 설정",
+    "Exception Approver Admin": "예외 승인자 관리자",
+    "Exception Management Admin": "예외 관리 관리자",
+    "Exclusion List": "제외 목록",
+    "Fields and Types": "필드 및 유형",
+    "General Configuration": "일반 구성",
+    "General Setting": "일반 설정",
+    "Generic Collector": "일반 수집기",
+    "Global Exceptions": "전역 예외",
+    "Identity Security Runtime": "ID 보안 런타임",
+    "Ingestion Monitoring": "수집 모니터링",
+    "Integrations Permissions": "통합 권한",
+    "Issue Exclusions": "이슈 제외",
+    "Jobs": "작업",
+    "Layouts": "레이아웃",
+    "Log Collections": "로그 수집",
+    "Long Running HTTP Integrations configuration": "장기 실행 HTTP 통합 구성",
+    "Macro Library": "매크로 라이브러리",
+    "On-demand Analytics": "온디맨드 분석",
+    "PR Scans": "PR 스캔",
+    "Periodic": "주기적",
+    "Public API": "공개 API",
+    "Query Library": "쿼리 라이브러리",
+    "Scans": "스캔",
+    "Supply Chain Catalog": "공급망 카탈로그",
+    "Supply Chain Tools": "공급망 도구",
+    "Support": "지원",
+    "Sync Profile": "동기화 프로필",
+    "Trusted Entities": "신뢰할 수 있는 엔터티",
+    "View/Edit": "보기/편집",
+  },
+
+  patterns: [
+    { re: /^(\d+)\s+Asset groups$/, tpl: "자산 그룹 $1개" },
+    { re: /^(\d+)\s+Domains$/, tpl: "도메인 $1개" },
+    { re: /^(\d+)\s+Groups?\s*,\s*(\d+)\s+Tags?$/, tpl: "그룹 $1개, 태그 $2개" },
+    { re: /^(\d+)\s+Groups?$/, tpl: "그룹 $1개" },
+    { re: /^(\d+)\s+Tags?$/, tpl: "태그 $1개" },
+    { re: /^All groups\s*,\s*(\d+)\s+Tags?$/, tpl: "모든 그룹, 태그 $1개" },
+    { re: /^(\d+)\s+Groups?\s*,\s*All tags$/, tpl: "그룹 $1개, 모든 태그" },
+  ],
+
+  skip: [],
+};

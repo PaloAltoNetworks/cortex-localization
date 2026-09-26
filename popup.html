@@ -1,0 +1,78 @@
+<!--
+  © 2026 Palo Alto Networks, Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Cortex Localization</title>
+<style>
+  body {
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    width: 280px;
+    padding: 14px;
+    font-size: 13px;
+    color: #1a1a1a;
+  }
+  h1 {
+    font-size: 13px;
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+  label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+  }
+  label.disabled {
+    cursor: default;
+    opacity: 0.55;
+  }
+  input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  p.note {
+    color: #666;
+    font-size: 11px;
+    margin: 10px 0 0;
+    line-height: 1.6;
+  }
+  p.note.disabled-note {
+    color: #a33;
+  }
+  p.status {
+    font-size: 11px;
+    margin: 8px 0 0;
+    color: #0a6b3d;
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <h1>Cortex Localization</h1>
+  <label id="mtEnabledLabel">
+    <input type="checkbox" id="mtEnabled">
+    <span>Translate dynamic items using Chrome Translation API.</span>
+  </label>
+  <p class="status" id="status">Settings saved.</p>
+  <p class="note" id="note">
+    Variable text, such as notification messages and repair instructions, is translated using Chrome's built-in AI translation feature (Translator API). All translation processing takes place locally on the device; no data is sent to external servers. Enabling this feature triggers a one-time download of the translation model.
+  </p>
+  <script src="dynamic-translation-config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

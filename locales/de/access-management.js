@@ -1,0 +1,218 @@
+/**
+ * © 2026 Palo Alto Networks, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+const dictionaryAccessManagement = {
+  exact: {
+    "Direct Role": "Direkte Rolle",
+    "Download example file": "Beispieldatei herunterladen",
+    "Email": "E-Mail",
+    "Import": "Importieren",
+    "Import Multiple User Roles": "Mehrere Benutzerrollen importieren",
+    "Show Hidden Users": "Ausgeblendete Benutzer anzeigen",
+    "Hide Hidden Users": "Ausgeblendete Benutzer ausblenden",
+    "This list shows users with a Cortex User role in Customer Support Portal":
+      "Diese Liste zeigt Benutzer mit einer Cortex-Benutzerrolle im Customer Support Portal",
+    "User Name": "Benutzername",
+    "User Type": "Benutzertyp",
+    "Group Roles": "Gruppenrollen",
+    "Last Login Time": "Letzte Anmeldung",
+    "First Name": "Vorname",
+    "New Role": "Neue Rolle",
+    "Role Name": "Rollenname",
+    "Define name here": "Namen hier festlegen",
+    "Add role description": "Rollenbeschreibung hinzufügen",
+    "Enable dataset access management": "Zugriffsverwaltung für Datensätze aktivieren",
+    "New Group": "Neue Gruppe",
+    "Import AD Group": "AD-Gruppe importieren",
+    "To Import AD groups, enable the Cloud Identity Engine in the Configurations> Integrations> Cloud Identity Engine page":
+      "Um AD-Gruppen zu importieren, aktivieren Sie die Cloud Identity Engine auf der Seite Configurations > Integrations > Cloud Identity Engine",
+    "Role": "Rolle",
+    "Nested Groups": "Verschachtelte Gruppen",
+    "IdP Groups": "IdP-Gruppen",
+    "Insert Time": "Einfügezeitpunkt",
+    "Update Time": "Aktualisierungszeit",
+    "New User Group": "Neue Benutzergruppe",
+    "Use the Scope tab to ensure that required access scope is granted":
+      "Stellen Sie über die Registerkarte \"Scope\" sicher, dass der erforderliche Zugriffsbereich gewährt ist",
+    "Enter nested group(s)": "Verschachtelte Gruppe(n) eingeben",
+    "Enter user(s)": "Benutzer eingeben",
+    "All cases and issues": "Alle Fälle und Probleme",
+    "No cases and issues": "Keine Fälle und Probleme",
+    "Select asset groups": "Asset-Gruppen auswählen",
+    "Select the specific asset groups to which this user group will have access.":
+      "Wählen Sie die spezifischen Asset-Gruppen aus, auf die diese Benutzergruppe Zugriff haben soll.",
+    "Select domains": "Domänen auswählen",
+    "Select specific (at least one required)": "Bestimmte auswählen (mindestens eine erforderlich)",
+    "Enter description...": "Beschreibung eingeben...",
+    "saml group mapping": "SAML-Gruppenzuordnung",
+    "Add IdP groups": "IdP-Gruppen hinzufügen",
+    "Provide access to assets listed under Inventory → All Assets, and to view their related Cases, Issues, and Findings. Only Asset Groups relevant for scoping are available for selection. Note that the visibility of Security domain Issues that refers to assets with agents is controlled by the Endpoint scoping configuration.":
+      "Gewährt Zugriff auf die unter Inventory → All Assets aufgeführten Assets sowie das Anzeigen der zugehörigen Fälle, Probleme und Befunde. Nur für den Geltungsbereich relevante Asset-Gruppen stehen zur Auswahl. Beachten Sie, dass die Sichtbarkeit von Problemen der Security-Domäne, die sich auf Assets mit Agents beziehen, durch die Konfiguration des Endpoint-Geltungsbereichs gesteuert wird.",
+    "Provide access to Endpoint Groups and Endpoint Tags to view their related Agent management and Enterprise policies. Note that the configuration may impact the visibility of related Security domain Cases and Issues, but will not affect asset visibility.":
+      "Gewährt Zugriff auf Endpoint-Gruppen und Endpoint-Tags, um die zugehörigen Agent-Verwaltungs- und Enterprise-Richtlinien anzuzeigen. Beachten Sie, dass sich die Konfiguration auf die Sichtbarkeit zugehöriger Fälle und Probleme der Security-Domäne auswirken kann, nicht jedoch auf die Sichtbarkeit von Assets.",
+    "Allow access to cases and issues that are not referencing known assets or endpoints.":
+      "Zugriff auf Fälle und Probleme zulassen, die nicht auf bekannte Assets oder Endpoints verweisen.",
+    "No tags and groups": "Keine Tags und Gruppen",
+    "All groups, All tags": "Alle Gruppen, alle Tags",
+    "All tags": "Alle Tags",
+    "All groups": "Alle Gruppen",
+    "No groups": "Keine Gruppen",
+    "No tags": "Keine Tags",
+    "Endpoint Groups": "Endpoint-Gruppen",
+    "Endpoint Tags": "Endpoint-Tags",
+    "Select specific": "Bestimmte auswählen",
+    "Select endpoint groups": "Endpoint-Gruppen auswählen",
+    "Select endpoint tags": "Endpoint-Tags auswählen",
+    "Collapse all": "Alle reduzieren",
+    "Configure who can grant additional access by sharing individual instances of dashboards and saved queries with other users. Account Administrators and Instance Administrators can always share.":
+      "Legen Sie fest, wer zusätzlichen Zugriff gewähren kann, indem einzelne Instanzen von Dashboards und gespeicherten Abfragen für andere Benutzer freigegeben werden. Kontoadministratoren und Instanzadministratoren können immer freigeben.",
+    "Editors can also Share objects with others": "Bearbeiter können Objekte ebenfalls für andere freigeben",
+    "Granular Access Settings": "Granulare Zugriffseinstellungen",
+    "Owners and editors can change the general access": "Besitzer und Bearbeiter können den allgemeinen Zugriff ändern",
+    "Owners can Share objects they created": "Besitzer können von ihnen erstellte Objekte freigeben",
+    "Add SSO Connection": "SSO-Verbindung hinzufügen",
+    "Communication Task Authentication": "Authentifizierung für Kommunikationsaufgaben",
+    "Configure internal Cortex tenant user login authentication using your organization's identity provider (IdP).":
+      "Konfigurieren Sie die Anmeldeauthentifizierung interner Cortex-Tenant-Benutzer über den Identitätsanbieter (IdP) Ihrer Organisation.",
+    "Login Options": "Anmeldeoptionen",
+    "SSO Enabled": "SSO aktiviert",
+    "SSO Integration": "SSO-Integration",
+    "Click here": "Klicken Sie hier,",
+    "to review SSO authentication errors": "um SSO-Authentifizierungsfehler zu überprüfen",
+    "Advanced Settings": "Erweiterte Einstellungen",
+    "Relay State": "Relay State",
+    "SP Logout URL": "SP-Abmelde-URL",
+    "Service Provider Public Certificate": "Öffentliches Zertifikat des Dienstanbieters",
+    "Service Provider Private Key (Pem Format)": "Privater Schlüssel des Dienstanbieters (PEM-Format)",
+    "Remove SAML RequestedAuthnContext": "SAML RequestedAuthnContext entfernen",
+    "Force Authentication": "Authentifizierung erzwingen",
+    "Single Sign-On URL": "Single Sign-On-URL",
+    "Audience URI (SP Entity ID)": "Zielgruppen-URI (SP-Entitäts-ID)",
+    "Metadata URL": "Metadaten-URL",
+    "Default Role": "Standardrolle",
+    "IdP Attributes Mapping": "Zuordnung der IdP-Attribute",
+    "Group Membership": "Gruppenmitgliedschaft",
+    "Last Name": "Nachname",
+    "Configure external (non-Cortex) user authentication to answer a survey sent via a communication task.":
+      "Konfigurieren Sie die Authentifizierung externer (Nicht-Cortex-)Benutzer für die Beantwortung einer Umfrage, die über eine Kommunikationsaufgabe gesendet wird.",
+    "Enable Communication task SSO Connection": "SSO-Verbindung für Kommunikationsaufgaben aktivieren",
+    "IdP Issuer ID": "IdP-Aussteller-ID",
+    "IdP SSO URL": "IdP SSO URL",
+    "IdP Single Logout URL": "IdP-Single-Logout-URL",
+    "x.509 certificate": "x.509-Zertifikat",
+    "The metadata provides information about the IdP's capabilities, endpoints, keys, and more.":
+      "Die Metadaten enthalten Informationen zu Funktionen, Endpunkten, Schlüsseln und mehr des IdP.",
+    "Metadata URL examples:": "Beispiele für Metadaten-URLs:",
+    "Associate this IdP with a specific domain (i.e. domain.com).":
+      "Diesen IdP einer bestimmten Domäne (z. B. domain.com) zuordnen.",
+    "When logging in, users are redirected to the IdP associated with their email domain or to the default IdP if no association exists.":
+      "Bei der Anmeldung werden Benutzer an den IdP weitergeleitet, der ihrer E-Mail-Domäne zugeordnet ist, oder an den Standard-IdP, falls keine Zuordnung besteht.",
+    "The name of the field/attribute that is used to store the user's last name in your Identity Provider":
+      "Der Name des Felds/Attributs, in dem der Nachname des Benutzers in Ihrem Identitätsanbieter gespeichert wird",
+    "The name of the field/attribute that is used to store the user's first name in your Identity Provider":
+      "Der Name des Felds/Attributs, in dem der Vorname des Benutzers in Ihrem Identitätsanbieter gespeichert wird",
+    "The name of the field/attribute that is used to store the user's email address in your Identity Provider":
+      "Der Name des Felds/Attributs, in dem die E-Mail-Adresse des Benutzers in Ihrem Identitätsanbieter gespeichert wird",
+    "Prompts users to reauthenticate log in, if requested by the Idp.":
+      "Fordert Benutzer zur erneuten Authentifizierung bei der Anmeldung auf, wenn der IdP dies anfordert.",
+    "Allows users to log in by using additional authentication methods.":
+      "Ermöglicht Benutzern die Anmeldung mit zusätzlichen Authentifizierungsmethoden.",
+    "Key pair for SAML request signing (mostly required for ADFS)": "Schlüsselpaar zum Signieren von SAML-Anforderungen (meist für ADFS erforderlich)",
+    "The URL of the landing page used after SSO login to the Cortex console.":
+      "Die URL der Startseite, die nach der SSO-Anmeldung bei der Cortex-Konsole verwendet wird.",
+    "In most cases, this field should be left blank": "In den meisten Fällen sollte dieses Feld leer bleiben",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+
+    // --- Manage permissions screen (permission category list) ---
+    "3rd Party Tools": "Tools von Drittanbietern",
+    "Agent Administrations": "Agent-Verwaltung",
+    "Agent Extension Policies": "Agent-Erweiterungsrichtlinien",
+    "Agent Groups": "Agent-Gruppen",
+    "Agent Installations": "Agent-Installationen",
+    "Agent Prevention Policies": "Agent-Präventionsrichtlinien",
+    "Agent Profiles": "Agent-Profile",
+    "Agent Scripts Library": "Agent-Skriptbibliothek",
+    "Alert Notifications": "Warnungsbenachrichtigungen",
+    "AppSec Collector": "AppSec Collector",
+    "AppSec Rules": "AppSec-Regeln",
+    "Asset Roles Configuration": "Konfiguration der Asset-Rollen",
+    "Auditing": "Auditing",
+    "Automations": "Automatisierungen",
+    "Broker Service": "Broker-Dienst",
+    "CI CD Scans": "CI/CD-Scans",
+    "CLI Tool": "CLI-Tool",
+    "Case Properties": "Falleigenschaften",
+    "Cases and Issues": "Fälle und Probleme",
+    "Catalog and Assessment Profiles": "Katalog- und Bewertungsprofile",
+    "Cloud Consumption Command Center": "Command Center für Cloud-Verbrauch",
+    "Cloud Security Command Center": "Command Center für Cloud-Sicherheit",
+    "Command Center Dashboards": "Command Center-Dashboards",
+    "Compute Policies": "Compute-Richtlinien",
+    "Conditional Access Policy": "Richtlinie für bedingten Zugriff",
+    "Cortex Agentic Assistant": "Cortex Agentic Assistant",
+    "Cortex XDR - analytics": "Cortex XDR - Analysen",
+    "Create Role": "Rolle erstellen",
+    "Data-in-motion Rules": "Regeln für Daten in Bewegung",
+    "Datasets (Disabled)": "Datensätze (deaktiviert)",
+    "Detections": "Erkennungen",
+    "Device Control": "Gerätesteuerung",
+    "Endpoint Applications": "Endpoint-Anwendungen",
+    "Endpoint Applications Groups": "Endpoint-Anwendungsgruppen",
+    "Endpoint DLP Settings": "Endpoint-DLP-Einstellungen",
+    "Exception Approver Admin": "Administrator für Ausnahmegenehmiger",
+    "Exception Management Admin": "Administrator für Ausnahmenverwaltung",
+    "Exclusion List": "Ausschlussliste",
+    "Fields and Types": "Felder und Typen",
+    "General Configuration": "Allgemeine Konfiguration",
+    "General Setting": "Allgemeine Einstellung",
+    "Generic Collector": "Generischer Collector",
+    "Global Exceptions": "Globale Ausnahmen",
+    "Identity Security Runtime": "Identitätssicherheit zur Laufzeit",
+    "Ingestion Monitoring": "Überwachung der Datenaufnahme",
+    "Integrations Permissions": "Integrationsberechtigungen",
+    "Issue Exclusions": "Problemausschlüsse",
+    "Jobs": "Jobs",
+    "Layouts": "Layouts",
+    "Log Collections": "Protokollsammlungen",
+    "Long Running HTTP Integrations configuration": "Konfiguration lang laufender HTTP-Integrationen",
+    "Macro Library": "Makrobibliothek",
+    "On-demand Analytics": "On-Demand-Analysen",
+    "PR Scans": "PR-Scans",
+    "Periodic": "Periodisch",
+    "Public API": "Öffentliche API",
+    "Query Library": "Abfragebibliothek",
+    "Scans": "Scans",
+    "Supply Chain Catalog": "Lieferkettenkatalog",
+    "Supply Chain Tools": "Lieferketten-Tools",
+    "Support": "Support",
+    "Sync Profile": "Synchronisierungsprofil",
+    "Trusted Entities": "Vertrauenswürdige Entitäten",
+    "View/Edit": "Anzeigen/Bearbeiten",
+  },
+
+  patterns: [
+    { re: /^(\d+)\s+Asset groups$/, tpl: "$1 Asset-Gruppen" },
+    { re: /^(\d+)\s+Domains$/, tpl: "$1 Domänen" },
+    { re: /^(\d+)\s+Groups?\s*,\s*(\d+)\s+Tags?$/, tpl: "$1 Gruppen, $2 Tags" },
+    { re: /^(\d+)\s+Groups?$/, tpl: "$1 Gruppen" },
+    { re: /^(\d+)\s+Tags?$/, tpl: "$1 Tags" },
+    { re: /^All groups\s*,\s*(\d+)\s+Tags?$/, tpl: "Alle Gruppen, $1 Tags" },
+    { re: /^(\d+)\s+Groups?\s*,\s*All tags$/, tpl: "$1 Gruppen, alle Tags" },
+  ],
+
+  skip: [],
+};
