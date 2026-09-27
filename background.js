@@ -184,17 +184,30 @@ async function injectForTab(tabId, url) {
   // as window.__CORTEX_LOCALE, which content.js's AI dynamic translation
   // (Translator API) uses as its target language, keeping it in sync with
   // the fixed dictionary's language.
-  const [{ result: alreadyInjected } = {}] = await chrome.scripting.executeScript({
-    target: { tabId },
-    world: 'ISOLATED',
-    func: (loc) => {
-      window.__CORTEX_LOCALE = loc;
-      if (window.__cortexI18nInjected) return true;
-      window.__cortexI18nInjected = true;
-      return false;
-    },
-    args: [locale],
-  });
+  //
+  // chrome.tabs.onUpdated and chrome.scripting.executeScript race independently, so by the
+  // time this runs the tab may already have navigated away, closed, or be showing a browser
+  // error page (e.g. "Frame with ID 0 is showing error page") even though its URL still
+  // matched SUPPORTED_HOST_PATTERN. There's nothing to inject into in that case, so this is
+  // expected and not logged as an error.
+  let alreadyInjected;
+  try {
+    const [{ result } = {}] = await chrome.scripting.executeScript({
+      target: { tabId },
+      world: 'ISOLATED',
+      func: (loc) => {
+        window.__CORTEX_LOCALE = loc;
+        if (window.__cortexI18nInjected) return true;
+        window.__cortexI18nInjected = true;
+        return false;
+      },
+      args: [locale],
+    });
+    alreadyInjected = result;
+  } catch (err) {
+    console.debug('[cortex-i18n] skipped injection (tab navigated away or is showing an error page):', err);
+    return;
+  }
   if (alreadyInjected) return;
 
   const files = LOCALE_MODULES[locale].map((name) => `locales/${locale}/${name}`);
