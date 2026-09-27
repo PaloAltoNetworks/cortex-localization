@@ -26,6 +26,10 @@ Google Chrome, Microsoft Edge
 
 Dynamic Translation requires Google Chrome version 138 or later.
 
+### Supported Products
+
+- Cortex Cloud Ver.2.2
+
 ### Main Specifications
 
 - Covers all Cortex Cloud regions (`*.xdr.<region>.paloaltonetworks.com`)
@@ -142,6 +146,8 @@ const CORTEX_DYNAMIC_TRANSLATION_ALWAYS_ON = true;
 - Because this uses a fixed-dictionary approach, text not in the dictionary or text that changes due to a Cortex Cloud UI update will not be translated
 - Dynamic Translation only covers areas explicitly registered in `MT_ELIGIBLE_SELECTOR`; unsupported screens/areas remain in English
 - Dynamic Translation depends on Chrome's `Translator` API (on-device AI translation), so it will not work on unsupported Chrome versions or in environments where the translation model cannot be downloaded
+- On-device AI refers to an AI model that runs locally in the browser rather than on a server. This means no network communication is required and it works offline, but compared to large cloud-based AI models, the on-device model is smaller and its translation accuracy and fluency are more limited. As a result, Dynamic Translation is a dynamic machine translation and may differ from the expected translation
+- This extension covers the major Cortex Cloud screens; not all screens are supported
 
 ### Disclaimer
 
@@ -176,6 +182,10 @@ See the LICENSE file for details.
 Google Chrome, Microsoft Edge
 
 ダイナミック トランスレーションはGoogle Chrome Version 138以降。
+
+### サポート製品
+
+- Cortex Cloud Ver.2.2
 
 ### 主な仕様
 
@@ -293,6 +303,8 @@ const CORTEX_DYNAMIC_TRANSLATION_ALWAYS_ON = true;
 - 固定辞書方式のため、辞書に無い文言やCortex Cloud側のUI更新で変化した文言は翻訳されない
 - ダイナミック トランスレーションは `MT_ELIGIBLE_SELECTOR` に明示的に登録された領域のみが対象で、未対応の画面・領域は英語のまま
 - ダイナミック トランスレーションはChromeの `Translator` API(オンデバイスAI翻訳)に依存するため、対応していないChromeバージョンや翻訳モデルをダウンロードできない環境では動作しない
+- オンデバイスAIとは、サーバーではなく端末(ブラウザ)上で動作するAIモデルのことで、通信不要・オフラインでも動作するという利点がある一方、クラウド上の大規模なAIモデルに比べてモデルサイズが小さく、翻訳精度や表現の自然さには限界がある。そのため、ダイナミック トランスレーションは動的な機械翻訳であり、想定される翻訳と異なる場合がある
+- 主要な画面をサポート対象としており、すべての画面をサポートしていない
 
 ### 免責事項
 
