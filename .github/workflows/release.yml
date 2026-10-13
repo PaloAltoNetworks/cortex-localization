@@ -1,0 +1,26 @@
+name: Release
+
+# Pushing a tag (e.g. 20261013-1) builds the installable ZIP and attaches it to a GitHub Release.
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build ZIP
+        run: bash scripts/build-release.sh "${GITHUB_REF_NAME}"
+
+      - name: Create Release and attach ZIP
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" "dist/cortex-localization-${GITHUB_REF_NAME}.zip" \
+            --title "${GITHUB_REF_NAME}" --generate-notes

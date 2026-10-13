@@ -270,7 +270,12 @@
   //   event-type renderer, e.g. xdr-auto-update-desc, xdr-alerts-added-desc, xdr-incident-creation-desc). Per
   //   user instruction, always excluded (also NOT added to MT_ELIGIBLE_SELECTOR) because AI translation
   //   accuracy on this sentence was poor, so it stays in English regardless of dynamic translation ON/OFF.
-  const RAW_IDENTIFIER_SELECTOR ='.monaco-editor, .CodeMirror, [class*="monaco-editor"], .helper-card, query-form, .task-library-panel, .joint-paper, .playbook-tabs-container-wrapper, .playbook-right-panel, #right-shoulder, .xsoar-object-library-content, .integration-shoulder, .agentix-right-panel, .prompts-container, .war-room-dropzone, bioc-indicator, xdr-file-retrieval-field .list-wrapper, secdo-generic-list .list-items, .single-closed-filter-content, xdr-filter-header, pan-graph-query-builder, cspm-json-rule-collapsinator, cspm-json-rule-flat-renderer, cspm-json-rule-property-picker, pan-json-viewer-line, u-tag-grid span, pan-key-value-tags-cell-renderer, .dataset-item, cas-recommended-policy-renderer, [role="gridcell"][col-id="RULE_NAME"], query-name-editor > .name-container > span.ng-star-inserted:not(.placeholder), pan-policy-name-cell-renderer, pan-data-profiles-cell-renderer, dspm-data-pattern-name-cell-renderer, [role="gridcell"][col-id="xdm__asset__name"], asm-inventory-origin-statement, asm-inventory-origin-statement ~ ul, idn-top-identity-issue, cspm-rule-side-panel-remediation-tab, .notification-content, u-grid[pangridloadmetric="case"] [role="gridcell"][col-id="NAME"], xdr-case-header h1, xdr-case-issues-feed u-timeline-title p, [pangridloadmetric="issue"] [role="gridcell"][col-id="alert_name"] .text, xdr-incident-creation-desc .ite-entity-name, xdr-record-data-drawer u-icon[panseverityicon] + span, xdr-issue-focus-area-header h3 span[utitle], cspm-rules [role="gridcell"][col-id="name"], cas-top-item [class*="font-bold"], u-grid[pangridloadmetric="issue"] [role="gridcell"][col-id="alert_category"], .markdown-content, pan-fix-details p[utext]:not([color="placeholder"]), xdr-action-description-renderer, xdr-mitre-matrix .matrix-cell.technique, secdo-inline-edit, .script-helper-items, input[u-search-input], pan-assessment-profile-wizard-summary span[variant="sm-normal"], [role="gridcell"][col-id="DESCRIPTION"], cas-recommendations-panel p[ucardcontent], cas-recommendations-panel u-card-title, [role="gridcell"][col-id="RULE_DESCRIPTION"], cspm-rules [role="gridcell"][col-id="description"], xdr-asm-rules [role="gridcell"][col-id="DESCRIPTION"], xdr-asm-rules [role="gridcell"][col-id="REMEDIATION_GUIDANCE"], [pangridloadmetric="issue"] [role="gridcell"][col-id="alert_description"] .rule-inner-content, [role="gridcell"][col-id="CVE_DESCRIPTION"], xdr-record-data-drawer p[color="placeholder"] + p[color="bold"], pan-highlight-text span[utext], xdr-case-description, xdr-case-issues-feed p[uhovercardtrigger], xdr-case-timeline-list p[utext], #vulnerability-description, cas-description-evidence, dspm-issue-evidence div[class*="max-w-[800px]"], div:has(a[href^="/configuration/market/browse/"]) > p[utext][color="placeholder"], top-incidents-widget .text-value, json-tree-view .json-tree-data, dspm-ai-asset-instructions p[utext][variant="xs-normal"], pan-panel-section[header="Description"] p, pan-panel-section[header="Highlights"] p, .p-dropdown-filter, [role="gridcell"][col-id="XDM_FINDING_NAME"], [role="gridcell"][col-id="XDM_FINDING_DESCRIPTION"], dspm-data-profiles-view-modal p[color="placeholder"] + p[utext], dspm-data-profiles-view-modal pan-tags-list, [role="gridcell"][col-id="name"]:has(pan-data-profiles-cell-renderer) + [role="gridcell"][col-id="description"], [role="gridcell"][col-id="name"]:has(dspm-data-pattern-name-cell-renderer) + [role="gridcell"][col-id="description"], pan-compliance-control-rules-tab [role="gridcell"][col-id="NAME"], cspm-rule-side-pan-header h3[data-testid="cspm-rule-title"], .pan-drawer-with-cards-container:has(cspm-rule-side-pan) .pan-drawer-card-toggle-title, cspm-rule-side-panel-details-tab [aria-label="Rule Description"], [role="gridcell"][col-id="RULE_REMEDIATION"], cwp-policies-wizard-summary span[color="placeholder"] + span[data-tooltip-trigger], cwp-policies-wizard-summary span[color="placeholder"] + div span[utext], [role="gridcell"][col-id="ISSUE_NAME"], [role="gridcell"][col-id="REMEDIATION"], pan-agents-hub-agent-card p[data-tooltip-trigger][variant="md-medium"], pan-agents-hub-agent-card section p[utext][variant="sm-normal"], button[role="checkbox"][aria-describedby$="-description"] + label + p[id$="-description"], pan-agents-hub-action-card p[data-tooltip-trigger][variant="md-medium"], pan-agents-hub-action-card section p[utext][variant="sm-normal"], label[for^="arguments-"] span[data-slot="label"], label[for^="outputs-"] span[data-slot="label"], xdr-case-task-pending p, pan-action-cards-list u-label[data-slot="label"], .timeline-event-desc';
+  // - .docs.detailed-description .global-markdown.fixed-layout table.ui.compact.table.celled.selectable tbody td:first-child:
+  //   the "Parameter" column (first column of the body rows) of the configuration-parameter table in the partner-integration
+  //   documentation panel (shared by all connectors). Parameter names must match the actual integration parameter names,
+  //   so they are always excluded from the fixed dictionary (also NOT added to MT_ELIGIBLE_SELECTOR). The header cell
+  //   (thead th) and the Description column remain translatable.
+  const RAW_IDENTIFIER_SELECTOR ='.monaco-editor, .CodeMirror, [class*="monaco-editor"], .helper-card, query-form, .task-library-panel, .joint-paper, .playbook-tabs-container-wrapper, .playbook-right-panel, #right-shoulder, .xsoar-object-library-content, .integration-shoulder, .agentix-right-panel, .prompts-container, .war-room-dropzone, bioc-indicator, xdr-file-retrieval-field .list-wrapper, secdo-generic-list .list-items, .single-closed-filter-content, xdr-filter-header, pan-graph-query-builder, cspm-json-rule-collapsinator, cspm-json-rule-flat-renderer, cspm-json-rule-property-picker, pan-json-viewer-line, u-tag-grid span, pan-key-value-tags-cell-renderer, .dataset-item, cas-recommended-policy-renderer, [role="gridcell"][col-id="RULE_NAME"], query-name-editor > .name-container > span.ng-star-inserted:not(.placeholder), pan-policy-name-cell-renderer, pan-data-profiles-cell-renderer, dspm-data-pattern-name-cell-renderer, [role="gridcell"][col-id="xdm__asset__name"], asm-inventory-origin-statement, asm-inventory-origin-statement ~ ul, idn-top-identity-issue, cspm-rule-side-panel-remediation-tab, .notification-content, u-grid[pangridloadmetric="case"] [role="gridcell"][col-id="NAME"], xdr-case-header h1, xdr-case-issues-feed u-timeline-title p, [pangridloadmetric="issue"] [role="gridcell"][col-id="alert_name"] .text, xdr-incident-creation-desc .ite-entity-name, xdr-record-data-drawer u-icon[panseverityicon] + span, xdr-issue-focus-area-header h3 span[utitle], cspm-rules [role="gridcell"][col-id="name"], cas-top-item [class*="font-bold"], u-grid[pangridloadmetric="issue"] [role="gridcell"][col-id="alert_category"], .markdown-content, pan-fix-details p[utext]:not([color="placeholder"]), xdr-action-description-renderer, xdr-mitre-matrix .matrix-cell.technique, secdo-inline-edit, .script-helper-items, input[u-search-input], pan-assessment-profile-wizard-summary span[variant="sm-normal"], [role="gridcell"][col-id="DESCRIPTION"], cas-recommendations-panel p[ucardcontent], cas-recommendations-panel u-card-title, [role="gridcell"][col-id="RULE_DESCRIPTION"], cspm-rules [role="gridcell"][col-id="description"], xdr-asm-rules [role="gridcell"][col-id="DESCRIPTION"], xdr-asm-rules [role="gridcell"][col-id="REMEDIATION_GUIDANCE"], [pangridloadmetric="issue"] [role="gridcell"][col-id="alert_description"] .rule-inner-content, [role="gridcell"][col-id="CVE_DESCRIPTION"], xdr-record-data-drawer p[color="placeholder"] + p[color="bold"], pan-highlight-text span[utext], xdr-case-description, xdr-case-issues-feed p[uhovercardtrigger], xdr-case-timeline-list p[utext], #vulnerability-description, cas-description-evidence, dspm-issue-evidence div[class*="max-w-[800px]"], div:has(a[href^="/configuration/market/browse/"]) > p[utext][color="placeholder"], top-incidents-widget .text-value, json-tree-view .json-tree-data, dspm-ai-asset-instructions p[utext][variant="xs-normal"], pan-panel-section[header="Description"] p, pan-panel-section[header="Highlights"] p, .p-dropdown-filter, [role="gridcell"][col-id="XDM_FINDING_NAME"], [role="gridcell"][col-id="XDM_FINDING_DESCRIPTION"], dspm-data-profiles-view-modal p[color="placeholder"] + p[utext], dspm-data-profiles-view-modal pan-tags-list, [role="gridcell"][col-id="name"]:has(pan-data-profiles-cell-renderer) + [role="gridcell"][col-id="description"], [role="gridcell"][col-id="name"]:has(dspm-data-pattern-name-cell-renderer) + [role="gridcell"][col-id="description"], pan-compliance-control-rules-tab [role="gridcell"][col-id="NAME"], cspm-rule-side-pan-header h3[data-testid="cspm-rule-title"], .pan-drawer-with-cards-container:has(cspm-rule-side-pan) .pan-drawer-card-toggle-title, cspm-rule-side-panel-details-tab [aria-label="Rule Description"], [role="gridcell"][col-id="RULE_REMEDIATION"], cwp-policies-wizard-summary span[color="placeholder"] + span[data-tooltip-trigger], cwp-policies-wizard-summary span[color="placeholder"] + div span[utext], [role="gridcell"][col-id="ISSUE_NAME"], [role="gridcell"][col-id="REMEDIATION"], pan-agents-hub-agent-card p[data-tooltip-trigger][variant="md-medium"], pan-agents-hub-agent-card section p[utext][variant="sm-normal"], button[role="checkbox"][aria-describedby$="-description"] + label + p[id$="-description"], pan-agents-hub-action-card p[data-tooltip-trigger][variant="md-medium"], pan-agents-hub-action-card section p[utext][variant="sm-normal"], label[for^="arguments-"] span[data-slot="label"], label[for^="outputs-"] span[data-slot="label"], xdr-case-task-pending p, pan-action-cards-list u-label[data-slot="label"], .timeline-event-desc, .docs.detailed-description .global-markdown.fixed-layout table.ui.compact.table.celled.selectable tbody td:first-child';
 
   /**
    * Determine whether an element (or a text node's parent) is inside an area excluded from the fixed dictionary.
@@ -298,6 +303,11 @@
     'xdr-case-issues-feed p[uhovercardtrigger]',
     // The description of each record in the case detail "Activity History" (also excluded on the fixed-dictionary side).
     'xdr-case-timeline-list p[utext]',
+    // The free-text description of each event (shown as a hover card) in the identity/user risk view's "Activity
+    // Timeline" widget (tenant-specific content: case names, host names, user names, counts, etc.). Per user
+    // instruction, a "static-first" policy: not added to RAW_IDENTIFIER_SELECTOR, so the fixed dictionary still
+    // takes priority; when dynamic translation is OFF this text is simply left untranslated (English).
+    'idn-risk-view-activity-timeline-widget p[uhovercardtrigger]',
     // The "Name" column (detection pattern name) in the "Issues and Insights" tab grid.
     '[pangridloadmetric="issue"] [role="gridcell"][col-id="alert_name"] .text',
     // The "Description" column of the same grid (free text shown as a hover card; also excluded on the fixed-dictionary side).
@@ -518,6 +528,132 @@
     }
 
     return null; // Unknown text
+  }
+
+  // ── Joined-sentence translation ─────────────────────────────────────────────────────────
+  // A sentence split by inline elements (links, bold, code, ...) becomes several text-node fragments, which
+  // translate poorly one by one. When the parent block contains only text and "plain" inline elements, the
+  // whole block is looked up as ONE sentence in which each inline element is replaced by a numbered
+  // placeholder, e.g. "For more information, see {0}." The translation must contain the same placeholders in
+  // ascending order ({0}, {1}, ...); inline elements are left exactly where they are in the DOM and only the
+  // text slots between them are rewritten, so Angular-managed nodes (and comment anchors) are never moved.
+  // If nothing matches, behavior is unchanged: the fragments are translated one by one as before.
+  const JOIN_INLINE_TAGS = new Set([
+    'A', 'B', 'STRONG', 'EM', 'I', 'CODE', 'SPAN', 'U', 'SMALL', 'MARK', 'KBD', 'SUP', 'SUB',
+    'ABBR', 'TT', 'CITE', 'Q', 'S', 'DFN', 'VAR', 'SAMP',
+  ]);
+  const JOIN_EXCLUDED_BLOCK_TAGS = new Set(['PRE', 'SCRIPT', 'STYLE', 'TEXTAREA', 'SELECT', 'OPTION', 'BODY', 'HTML']);
+  const JOIN_MAX_KEY_LENGTH = 1500;
+
+  // Records the text this feature wrote into each text node, so the MutationObserver doesn't reprocess its own writes.
+  const joinOutputText = new WeakMap();
+
+  function isPlainInline(el, depth) {
+    if (depth > 3 || !JOIN_INLINE_TAGS.has(el.tagName)) return false;
+    for (const c of el.childNodes) {
+      if (c.nodeType === Node.ELEMENT_NODE && !isPlainInline(c, depth + 1)) return false;
+    }
+    return true;
+  }
+
+  /**
+   * Find the nearest non-inline ancestor of a text node (the "block" whose children form the sentence).
+   */
+  function findJoinBlock(node) {
+    let el = node.parentElement;
+    let depth = 0;
+    while (el && JOIN_INLINE_TAGS.has(el.tagName) && depth < 4) {
+      el = el.parentElement;
+      depth++;
+    }
+    if (!el || JOIN_INLINE_TAGS.has(el.tagName) || JOIN_EXCLUDED_BLOCK_TAGS.has(el.tagName)) return null;
+    return el;
+  }
+
+  /**
+   * Describe the block as a lookup key plus its slots. slots[i] are the text nodes before inline element i
+   * (the last slot is after the final element). Returns null if the block has anything other than text,
+   * comments and plain inline elements, or has no inline element at all.
+   */
+  function buildJoinInfo(block) {
+    const slots = [[]];
+    const els = [];
+    let raw = '';
+    let textCount = 0;
+    let hasBr = false;
+    for (const c of block.childNodes) {
+      if (c.nodeType === Node.TEXT_NODE) {
+        slots[slots.length - 1].push(c);
+        raw += c.data;
+        textCount++;
+      } else if (c.nodeType === Node.ELEMENT_NODE) {
+        if (c.tagName === 'BR') {
+          // A line break inside a sentence is treated as a space; the <br> itself stays where it is.
+          raw += ' ';
+          hasBr = true;
+          continue;
+        }
+        if (!isPlainInline(c, 0)) return null;
+        raw += '{' + els.length + '}';
+        els.push(c);
+        slots.push([]);
+      } else if (c.nodeType !== Node.COMMENT_NODE) {
+        return null;
+      }
+      if (raw.length > JOIN_MAX_KEY_LENGTH) return null;
+    }
+    // Without inline elements the block is only a joined sentence when its text is split across several text
+    // nodes (e.g. by a <br> or an Angular comment anchor); a single text node is handled by normal translation.
+    if (!els.length && textCount < 2) return null;
+    const key = raw.replace(/[​-‍﻿]/g, '').trim().replace(/\s+/g, ' ');
+    if (!key.replace(/\{\d+\}/g, '').trim()) return null;
+    return { key, slots, els };
+  }
+
+  function setJoinText(textNode, text) {
+    joinOutputText.set(textNode, text);
+    if (textNode.data !== text) textNode.data = text;
+  }
+
+  /**
+   * Try to translate the whole block containing this text node as one sentence. Returns true if the block was rewritten.
+   */
+  function tryJoinedTranslation(node) {
+    const block = findJoinBlock(node);
+    if (!block || block.childNodes.length < 2) return false; // fast path: a block with a single child node can't be a joined sentence
+    const info = buildJoinInfo(block);
+    if (!info || !Object.prototype.hasOwnProperty.call(dictionary.exact, info.key)) return false;
+    // The costly selector checks run only once the dictionary actually has this sentence.
+    if (isInsideCodeEditor(block) || isInsideCodeEditor(node.parentElement)) return false;
+
+    // Split the translation into text segments around the placeholders; they must appear as {0},{1},... in order.
+    const segs = [''];
+    let expect = 0;
+    for (const part of dictionary.exact[info.key].split(/(\{\d+\})/)) {
+      const m = part.match(/^\{(\d+)\}$/);
+      if (m) {
+        if (Number(m[1]) !== expect) return false;
+        expect++;
+        segs.push('');
+      } else {
+        segs[segs.length - 1] += part;
+      }
+    }
+    if (expect !== info.els.length) return false;
+
+    for (let i = 0; i < info.slots.length; i++) {
+      const nodes = info.slots[i];
+      const seg = segs[i];
+      if (nodes.length) {
+        setJoinText(nodes[0], seg);
+        for (let k = 1; k < nodes.length; k++) setJoinText(nodes[k], '');
+      } else if (seg) {
+        const t = document.createTextNode(seg);
+        joinOutputText.set(t, seg);
+        block.insertBefore(t, i < info.els.length ? info.els[i] : null);
+      }
+    }
+    return true;
   }
 
   // ── AI translation (dynamic translation) feature ──────────────────────────────────────────
@@ -895,6 +1031,12 @@
 
     // Do nothing if this is exactly the content already written by AI translation (prevents reprocessing triggered by the write's own mutation event).
     if (mtOutputText.get(node) === original) return;
+    if (joinOutputText.get(node) === original) return;
+
+    // Sentences split by links/bold/code: translate the whole block at once when the dictionary has it as a
+    // joined sentence. If this text node itself was rewritten, we're done; if it sits inside an inline
+    // element (e.g. the link text), continue with the normal per-fragment translation below.
+    if (tryJoinedTranslation(node) && joinOutputText.has(node)) return;
 
     // Fixed-dictionary translation is never performed under RAW_IDENTIFIER_SELECTOR (exact/partial word
     // matching would mistranslate). This check is independent of whether it's an AI translation target.

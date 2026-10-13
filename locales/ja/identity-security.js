@@ -76,6 +76,22 @@ const dictionaryIdentitySecurity = {
     "We’ve identified the most pressing vulnerabilities to help secure your identity.":
       "アイデンティティのセキュリティ確保に役立つ、最も重要な脆弱性を特定しました。",
     "Write": "書き込み",
+    // Widgets on the identity/user detail drill-down page.
+    "Case Breakdown": "ケースの内訳",
+    "Total open cases within the selected timeframe": "選択した期間内のオープンケースの合計数",
+    "Risk Score Trend": "リスクスコアの推移",
+    "There is no data to display at this time.": "現在表示できるデータがありません。",
+    "Points Added": "追加ポイント",
+    "View User Details": "ユーザー詳細を表示",
+    "View in XQL": "XQLで表示",
+    "Authentication Attempts": "認証試行",
+    "Failed Logins": "ログイン失敗",
+    "Risk Assessment": "リスク評価",
+    "Common User Locations": "一般的なユーザーの所在地",
+    "Common Operating Systems": "一般的なオペレーティングシステム",
+    "Activity Timeline": "アクティビティタイムライン",
+    "Issues & Insights Heatmap": "イシューとインサイトのヒートマップ",
+    "SaaS Logs": "SaaSログ",
   },
 
   patterns: [

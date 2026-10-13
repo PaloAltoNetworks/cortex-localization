@@ -76,8 +76,23 @@ const dictionaryIdentitySecurity = {
     "We’ve identified the most pressing vulnerabilities to help secure your identity.":
       "ID 보안을 강화하는 데 도움이 되도록 가장 시급한 취약점을 식별했습니다.",
     "Write": "쓰기",
+      // Widgets on the identity/user detail drill-down page.
+    "Case Breakdown": "케이스 분류",
+    "Total open cases within the selected timeframe": "선택한 기간 내 열린 케이스 총 수",
+    "Risk Score Trend": "위험 점수 추이",
+    "There is no data to display at this time.": "현재 표시할 데이터가 없습니다.",
+    "Points Added": "추가된 포인트",
+    "View User Details": "사용자 세부정보 보기",
+    "View in XQL": "XQL에서 보기",
+    "Authentication Attempts": "인증 시도",
+    "Failed Logins": "로그인 실패",
+    "Risk Assessment": "위험 평가",
+    "Common User Locations": "일반적인 사용자 위치",
+    "Common Operating Systems": "일반적인 운영 체제",
+    "Activity Timeline": "활동 타임라인",
+    "Issues & Insights Heatmap": "이슈 및 인사이트 히트맵",
+    "SaaS Logs": "SaaS 로그",
   },
-
   patterns: [
     { re: /^([\d,]+)\s+Empty Groups$/, tpl: "빈 그룹 $1개" },
     { re: /^([\d,]+)\s+MFA Disabled$/, tpl: "MFA 사용 안 함 $1개" },

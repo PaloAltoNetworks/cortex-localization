@@ -76,8 +76,23 @@ const dictionaryIdentitySecurity = {
     "We’ve identified the most pressing vulnerabilities to help secure your identity.":
       "Hemos identificado las vulnerabilidades más urgentes para ayudarle a proteger su identidad.",
     "Write": "Escritura",
+      // Widgets on the identity/user detail drill-down page.
+    "Case Breakdown": "Desglose de casos",
+    "Total open cases within the selected timeframe": "Total de casos abiertos dentro del período seleccionado",
+    "Risk Score Trend": "Tendencia de la puntuación de riesgo",
+    "There is no data to display at this time.": "Actualmente no hay datos para mostrar.",
+    "Points Added": "Puntos añadidos",
+    "View User Details": "Ver detalles del usuario",
+    "View in XQL": "Ver en XQL",
+    "Authentication Attempts": "Intentos de autenticación",
+    "Failed Logins": "Inicios de sesión fallidos",
+    "Risk Assessment": "Evaluación de riesgos",
+    "Common User Locations": "Ubicaciones de usuario habituales",
+    "Common Operating Systems": "Sistemas operativos habituales",
+    "Activity Timeline": "Cronología de actividad",
+    "Issues & Insights Heatmap": "Mapa de calor de incidencias e información",
+    "SaaS Logs": "Registros de SaaS",
   },
-
   patterns: [
     { re: /^([\d,]+)\s+Empty Groups$/, tpl: "$1 grupos vacíos" },
     { re: /^([\d,]+)\s+MFA Disabled$/, tpl: "$1 con MFA deshabilitada" },

@@ -315,7 +315,7 @@ const dictionaryCommon = {
     /^AG-[A-Z-]+$/,
     // Dynamic "last updated" display that includes a time (a pattern-based rule may be worth
     // adding for this later).
-    /^Last updated on/,
+    /^Last updated on(?!.* \(every \d+ min\)$)/,
     // SVG metadata left behind by the Sketch design tool.
     /^Created with Sketch\.$/,
     /^Generator: Sketch/,

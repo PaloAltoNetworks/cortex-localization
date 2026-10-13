@@ -354,7 +354,7 @@ const dictionaryCommon = {
     // 時刻を含む動的な更新表示(将来パターン化を検討)
     // Dynamic "last updated" display that includes a time (a pattern-based rule may be worth
     // adding for this later).
-    /^Last updated on/,
+    /^Last updated on(?!.* \(every \d+ min\)$)/,
     // Sketch(デザインツール)のSVGメタデータ
     // SVG metadata left behind by the Sketch design tool.
     /^Created with Sketch\.$/,

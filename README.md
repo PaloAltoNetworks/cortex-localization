@@ -67,6 +67,8 @@ Both require a model download on first use, but the translation processing itsel
 ├── popup.html                       # Settings popup shown when the toolbar icon is clicked (Dynamic Translation on/off)
 ├── popup.js                         # Saves the popup's settings to chrome.storage.local
 ├── LICENSE                          # License
+├── scripts/build-release.sh         # Builds the installable ZIP (manifest.json at the ZIP root) into dist/
+├── .github/workflows/release.yml    # On a tag push, builds the ZIP and attaches it to a GitHub Release
 └── locales/
     ├── ja/                          # Japanese dictionary (one file per screen/feature)
     │   ├── common.js
@@ -81,14 +83,22 @@ Both require a model download on first use, but the translation processing itsel
 
 ### Usage
 
-1. Download this repository as a ZIP, or `git clone` it
+1. Download the latest `cortex-localization-<version>.zip` from the repository's [Releases](../../releases) page (Assets) and unzip it. `manifest.json` is directly inside the unzipped folder. (Alternatively, `git clone` this repository)
 2. Open `chrome://extensions` in Chrome
 3. Enable "Developer mode" in the top right
-4. Click "Load unpacked" and select this repository's folder
+4. Click "Load unpacked" and select the unzipped folder (the one that contains `manifest.json`). Do not delete this folder afterwards, because Chrome loads the extension from it
 5. Open a Cortex Cloud tenant and it will be automatically translated according to the browser's language setting
 6. (Optional) To also AI-translate case names, issue descriptions, etc., click the extension's toolbar icon and turn on "Translate dynamic items using Chrome Translation API" (the first time it's turned on, Chrome downloads the translation model, which takes a little time)
 
 After updating the extension itself or its dictionary files, go to `chrome://extensions`, "Remove" the extension once, then "Load unpacked" again (a simple reload may not pick up changes to the service worker, `background.js`).
+
+### Publishing a Release (for maintainers)
+
+1. Commit and push the changes (update `version` in `manifest.json` if needed)
+2. Push a tag, e.g. `git tag 20261013-1 && git push origin 20261013-1`
+3. GitHub Actions runs `scripts/build-release.sh`, creates a Release for the tag and attaches `cortex-localization-<tag>.zip`
+
+To build the ZIP locally, run `scripts/build-release.sh` (output: `dist/cortex-localization-<manifest version>.zip`).
 
 ### How to Add Translations
 
@@ -224,6 +234,8 @@ Google Chrome, Microsoft Edge
 ├── popup.html                       # ツールバーアイコンをクリックした時の設定ポップアップ(ダイナミック トランスレーションON/OFF)
 ├── popup.js                         # ポップアップの設定を chrome.storage.local に保存する
 ├── LICENSE                          # ライセンス
+├── scripts/build-release.sh         # インストール用ZIP(ZIP直下に manifest.json)を dist/ に作成する
+├── .github/workflows/release.yml    # タグをpushすると、ZIPを作成してGitHubのReleaseに添付する
 └── locales/
     ├── ja/                          # 日本語辞書(画面・機能ごとに1ファイル)
     │   ├── common.js
@@ -238,14 +250,22 @@ Google Chrome, Microsoft Edge
 
 ### 使い方
 
-1. このリポジトリをZIPでダウンロード、または `git clone` する
+1. リポジトリの [Releases](../../releases) ページ(Assets)から最新の `cortex-localization-<バージョン>.zip` をダウンロードして解凍する(解凍したフォルダの直下に `manifest.json` があります。`git clone` でも可)
 2. Chrome で `chrome://extensions` を開く
 3. 右上の「デベロッパーモード」を有効にする
-4. 「パッケージ化されていない拡張機能を読み込む」をクリックし、このリポジトリのフォルダを選択する
+4. 「パッケージ化されていない拡張機能を読み込む」をクリックし、解凍したフォルダ(`manifest.json` があるフォルダ)を選択する。Chromeはこのフォルダから拡張機能を読み込むため、読み込み後もフォルダは削除しないこと
 5. Cortex Cloud のテナントを開くと、ブラウザの言語設定に応じて自動的に翻訳される
 6. (任意)ケース名やイシューの説明などもAI翻訳したい場合は、拡張機能のツールバーアイコンをクリックし「Translate dynamic items using Chrome Translation API」をONにする(初回ONの際にChromeが翻訳モデルをダウンロードするため、少し時間がかかる)
 
 拡張機能本体や辞書ファイルを更新した後は、`chrome://extensions` で一度拡張機能を「削除」してから再度「パッケージ化されていない拡張機能を読み込む」を行ってください(単なる再読み込みではService Worker (`background.js`) の変更が反映されないことがあります)。
+
+### Releaseの公開手順(管理者向け)
+
+1. 変更をコミットしてpushする(必要に応じて `manifest.json` の `version` を更新)
+2. タグをpushする(例: `git tag 20261013-1 && git push origin 20261013-1`)
+3. GitHub Actionsが `scripts/build-release.sh` を実行し、そのタグのReleaseを作成して `cortex-localization-<タグ>.zip` を添付する
+
+手元でZIPを作る場合は `scripts/build-release.sh` を実行する(出力: `dist/cortex-localization-<manifestのバージョン>.zip`)。
 
 ### 翻訳を追加する手順
 

@@ -141,9 +141,9 @@ const dictionaryThreatManagement = {
       "例: dataset=xdr_data | filter action_process_image_name=$action_process_image_name | fields action_process_image_name, agent_id, event_type, event_sub_type",
     "Set either a static name or use a variable based on a query output field using the format $fieldName.":
       "固定の名前を設定するか、$fieldNameという形式でクエリの出力フィールドに基づく変数を使用してください。",
-    "Set the": "クエリを実行する",
+    "Set the": "設定項目:",
     "time frame": "期間",
-    "for running a query (up to 7 days).": "を設定してください(最大7日間)。",
+    "for running a query (up to 7 days).": "(クエリ実行用、最大7日間)。",
 
     // --- 「IOCルールを作成 - ファイルをアップロード」モーダル ---
     // --- "Create IOC rule - upload file" modal ---
