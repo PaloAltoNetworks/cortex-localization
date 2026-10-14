@@ -92,6 +92,11 @@ Both require a model download on first use, but the translation processing itsel
 
 After updating the extension itself or its dictionary files, go to `chrome://extensions`, "Remove" the extension once, then "Load unpacked" again (a simple reload may not pick up changes to the service worker, `background.js`).
 
+
+**Note for Google Workspace Private Publishing:**
+The downloaded `cortex-localization-<version>.zip` file can be directly uploaded and registered as-is (without unzipping) for private extension distribution within your Google Workspace organization.
+
+
 ### Publishing a Release (for maintainers)
 
 1. Commit and push the changes (update `version` in `manifest.json` if needed)
@@ -258,6 +263,10 @@ Google Chrome, Microsoft Edge
 6. (任意)ケース名やイシューの説明などもAI翻訳したい場合は、拡張機能のツールバーアイコンをクリックし「Translate dynamic items using Chrome Translation API」をONにする(初回ONの際にChromeが翻訳モデルをダウンロードするため、少し時間がかかる)
 
 拡張機能本体や辞書ファイルを更新した後は、`chrome://extensions` で一度拡張機能を「削除」してから再度「パッケージ化されていない拡張機能を読み込む」を行ってください(単なる再読み込みではService Worker (`background.js`) の変更が反映されないことがあります)。
+
+**Google Workspaceでの限定公開について**
+ダウンロードした `cortex-localization-<バージョン>.zip` ファイルは、解凍せずにそのままGoogle WorkspaceのChrome拡張機能の限定公開（組織内へのプライベート配信）用アプリとして登録・配信することが可能です。
+
 
 ### Releaseの公開手順(管理者向け)
 
