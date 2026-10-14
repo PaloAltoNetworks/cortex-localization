@@ -93,7 +93,7 @@ Both require a model download on first use, but the translation processing itsel
 After updating the extension itself or its dictionary files, go to `chrome://extensions`, "Remove" the extension once, then "Load unpacked" again (a simple reload may not pick up changes to the service worker, `background.js`).
 
 
-**Note for Chrome Web Store Private Publishing via Google Workspace:**
+#### **Note for Chrome Web Store Private Publishing via Google Workspace:**
 The downloaded `cortex-localization-<version>.zip` file can be directly uploaded and registered as-is to the Chrome Web Store for private distribution within your Google Workspace organization.
 
 
@@ -264,7 +264,7 @@ Google Chrome, Microsoft Edge
 
 拡張機能本体や辞書ファイルを更新した後は、`chrome://extensions` で一度拡張機能を「削除」してから再度「パッケージ化されていない拡張機能を読み込む」を行ってください(単なる再読み込みではService Worker (`background.js`) の変更が反映されないことがあります)。
 
-**Google WorkspaceでのChrome Web Store限定公開について**
+#### **Google WorkspaceでのChrome Web Store限定公開について**
 ダウンロードした `cortex-localization-<バージョン>.zip` ファイルは、解凍せずにそのままGoogle WorkspaceのChrome拡張機能の限定公開（組織内へのプライベート配信）用アプリとして登録・配信することが可能です。
 
 
